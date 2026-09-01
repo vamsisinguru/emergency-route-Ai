@@ -25,10 +25,14 @@ backend/bin/
 backend/include/
 backend/lib/
 backend/pyvenv.cfg
+backend/venv/
+venv/
+.venv/
 
 # Environment
 .env
-*.env
+.env.*
+!.env.example
 
 # IDE
 .vscode/
