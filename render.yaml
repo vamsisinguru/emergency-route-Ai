@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: emergency-route-ai-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: OSRM_URL
+        value: https://router.project-osrm.org
+      - key: AMBULANCE_LAT
+        value: 17.3850
+      - key: AMBULANCE_LON
+        value: 78.4867
+      - key: ALLOWED_ORIGINS
+        sync: false
